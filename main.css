@@ -15,19 +15,19 @@ button {
     cursor: pointer;
   }
   body {
-      background-color: rgb(100, 105, 165);
+      background-color: rgb(255, 255, 255);
   }
   h1{
-      color: rgb(92, 34, 11);
+      color: rgb(190, 54, 0);
       text-align:center;
-      text-decoration: rgb(56, 170, 164);
-      text-shadow: 2px 2px #ff0000;
+      text-decoration: rgb(255, 255, 255);
+      text-shadow: 2px 2px #d0ff00;
       font-size: 300%;
   }
   img {
     float: left;   
     width: 100px;
-    border-radius: 200px;
+    
   }
   
   
