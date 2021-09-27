@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuyOnChain</title>
+    <link rel="stylesheet" href="main.css">
+    <h1><img src="logo/Buy.gif">Buy On Chain</h1>
+    
+    
+</head>
+<body>
+    <div>
+        <button id="btnConnect">Connect wallet</button>
+        <button id="btnUserInfo">Profile</button>
+        <button id="btnOpenListItem">List</button>
+    </div>
+
+    <div id="userInfo">
+        <h4>User Profile</h4>
+        <input type="text"id = "txtUsername" required placeholder="Enter username">
+        <input type="text"id = "txtEmail" placeholder="Enter email">
+        
+        <img width="50" height="50" src="" id="imgAvatar" alt="">
+        <label for="fileAvatar">Select Avatar</label>
+        <input type="file" id="fileAvatar">
+
+        <button id="btnLogout">Log out</button>
+        <button id="btnCloseUserInfo">Close</button>
+        <button id="btnSaveUserInfo">Save</button>
+    </div>
+
+    <div id="listItem">
+        <h4>List Item</h4>
+        <input type="text"id = "txtListItemName" required placeholder="Enter name">
+        <textarea id="txtListItemDescription" cols="30" rows="5" placeholder="Enter Description"></textarea>
+        <input type="number" min="1" step="1" id = "numListItemPrice" placeholder="Enter Price" required>
+        
+        <label for="selectListItemStatus">Status</label>
+        <select id="selectListItemStatus">
+            <option value="0">Not for sale</option>
+            <option value="1">Instant buy</option>
+            <option value="2">Accept offers</option>
+        </select>
+
+        <label for="fileListItem">Select File</label>
+        <input type="file" id="fileListItem">
+
+        <button id="btnCloseListItem">Close</button>
+        <button id="btnListItem">List</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
