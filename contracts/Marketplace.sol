@@ -1,8 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 import "contracts/NFT.sol";
+import "contracts/Stakable.sol";
 
-contract Marketplace is Receipt{
+contract Marketplace is NFT, Stakable{
    
    address payable public Owner;
    enum status{Available, Sold}
@@ -68,7 +69,7 @@ contract Marketplace is Receipt{
    
    
    
-    function listItem(string calldata _name, uint _price, uint _quantity) external {
+    function listItem(string calldata _name, uint _price, uint _quantity) external onlyStakers {
          productId++;
          Products.push(product(_name, _price, _quantity, payable(msg.sender)));
          if (_quantity>=1){
@@ -80,7 +81,7 @@ contract Marketplace is Receipt{
         
    }  
    
-   function buy(uint _productId, uint _quantity) external payable notSellor(_productId) cost(Products[_productId].price, _quantity){
+   function buy(uint _productId, uint _quantity) external payable notSellor(_productId) cost(Products[_productId].price, _quantity) onlyStakers{
        require (currentStatus== status.Available);
        Products[_productId].quantity-=_quantity;
        OrderStatus= orderStatus.OrderPlaced;
