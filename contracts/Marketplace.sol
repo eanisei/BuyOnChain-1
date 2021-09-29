@@ -10,16 +10,16 @@ contract Marketplace is NFT, Stakable{
    status currentStatus;
    string xyz;
   
-   enum orderStatus{OrderPlaced, OrderCancelled, OrderConfirmed, Dispatched}
+   enum orderStatus{OrderPlaced, OrderCancelled, OrderConfirmed, Dispatched, Disputed}
    orderStatus OrderStatus;
    uint public receiptId;
    uint public productId;
-   address payable Burn = payable(0x000000000000000000000000000000000000dEaD);
+   address payable burn =payable(0x000000000000000000000000000000000000dEaD);
    
    constructor() {
        Owner= payable(msg.sender);
-       Receipts.push(receipt(0,0,0,Burn,Burn));
-       Products.push(product(xyz, 0,0, Burn));
+       Receipts.push(receipt(0,0,0,burn,burn));
+       Products.push(product(xyz, 0,0, burn));
    }
    
    struct product{
@@ -65,7 +65,7 @@ contract Marketplace is NFT, Stakable{
        require(Receipts[_receiptId].seller==msg.sender, "You are not the seller of this product!!");
        _;
    }
-   modifier onlyOwner(){
+   modifier onlyOwner() override{
        require (msg.sender == Owner, "You are not the owner");
        _;
    }
@@ -107,18 +107,19 @@ contract Marketplace is NFT, Stakable{
    function itemDelivered(uint _receiptId) public onlyBuyer(_receiptId) {
        Receipts[_receiptId].seller.transfer(Receipts[_receiptId].totalCost);
        bytes memory description= abi.encodePacked(block.timestamp, _receiptId, block.difficulty, Receipts[_receiptId].productId, Receipts[_receiptId].quantity, Receipts[_receiptId].totalCost, Receipts[_receiptId].buyer, Receipts[_receiptId].seller, Receipts.length);
-       mint(msg.sender, description);
-       mint(Receipts[_receiptId].seller, description);
+       mintNFT(msg.sender, description);
+       mintNFT(Receipts[_receiptId].seller, description);
    }
    
-//   function dispute(uint _receiptId) external payable {
-//       require(msg.sender==Receipts[_receiptId].buyer||msg.sender==Receipts[_receiptId].seller);
-//           owner.transfer(Receipts[_receiptId].totalCost);
+  function dispute(uint _receiptId) external payable {
+      require(msg.sender==Receipts[_receiptId].buyer||msg.sender==Receipts[_receiptId].seller);
+      OrderStatus=orderStatus.Disputed;
        
-//   }
+  }
    
     function resolve(uint _receiptId, address payable _justice) public payable onlyOwner {
-      require (_justice==Receipts[_receiptId].buyer||_justice==Receipts[_receiptId].seller, "This is not a buyer or seller of this product!!");      
+      require (_justice==Receipts[_receiptId].buyer||_justice==Receipts[_receiptId].seller, "This is not a buyer or seller of this product!!");
+      require (OrderStatus==orderStatus.Disputed, "This transaction is not disputed!!");      
       _justice.transfer(Receipts[_receiptId].totalCost);
     }
     

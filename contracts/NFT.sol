@@ -23,11 +23,11 @@ contract NFT is ERC1155, Ownable{
     //     bytes memory data
     // )
 
-    function mint(address account, bytes memory description) public{
+    function mintNFT(address account, bytes memory description) public{
           _mint(account, buyerReceipt, 1, description);
     }
 
-    function burn(address account, uint id, uint amount) public{
+    function burnNFT(address account, uint id, uint amount) public{
         require(msg.sender==account);
         _burn(account, id, amount);
     }

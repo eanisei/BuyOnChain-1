@@ -15,3 +15,4 @@ Procedure:
 
 5)Two unique NFTs will get minted after successful transaction. One will go to the buyer and the other to the seller. These NFTs will be used as a proof of purchase and sell.
 
+<img src="logo/scheme.png">
