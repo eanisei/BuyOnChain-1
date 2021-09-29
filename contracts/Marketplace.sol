@@ -65,9 +65,11 @@ contract Marketplace is NFT, Stakable{
        require(Receipts[_receiptId].seller==msg.sender, "You are not the seller of this product!!");
        _;
    }
-   
-   
-   
+   modifier onlyOwner(){
+       require (msg.sender == Owner, "You are not the owner");
+       _;
+   }
+    
    
     function listItem(string calldata _name, uint _price, uint _quantity) external onlyStakers {
          productId++;
@@ -76,10 +78,8 @@ contract Marketplace is NFT, Stakable{
              currentStatus = status.Available;
              emit newProduct(productId, _name, _price, _quantity, msg.sender);
          }
-         
-         
-        
-   }  
+          
+    }  
    
    function buy(uint _productId, uint _quantity) external payable notSellor(_productId) cost(Products[_productId].price, _quantity) onlyStakers{
        require (currentStatus== status.Available);
@@ -106,7 +106,7 @@ contract Marketplace is NFT, Stakable{
    
    function itemDelivered(uint _receiptId) public onlyBuyer(_receiptId) {
        Receipts[_receiptId].seller.transfer(Receipts[_receiptId].totalCost);
-       bytes memory description= abi.encodePacked(block.timestamp, Receipts.length, block.difficulty, Receipts[_receiptId].productId, Receipts[_receiptId].quantity, Receipts[_receiptId].totalCost, Receipts[_receiptId].buyer, Receipts[_receiptId].seller);
+       bytes memory description= abi.encodePacked(block.timestamp, _receiptId, block.difficulty, Receipts[_receiptId].productId, Receipts[_receiptId].quantity, Receipts[_receiptId].totalCost, Receipts[_receiptId].buyer, Receipts[_receiptId].seller, Receipts.length);
        mint(msg.sender, description);
        mint(Receipts[_receiptId].seller, description);
    }
@@ -117,11 +117,10 @@ contract Marketplace is NFT, Stakable{
        
 //   }
    
-//   function resolve(uint _receiptId, address payable _justice) public payable  {
-//       require(Receipts[_receiptId].totalCost==msg.value);
-//       require(msg.sender==owner);
-//       _justice.transfer(Receipts[_receiptId].totalCost);
-//   }
+    function resolve(uint _receiptId, address payable _justice) public payable onlyOwner {
+      require (_justice==Receipts[_receiptId].buyer||_justice==Receipts[_receiptId].seller, "This is not a buyer or seller of this product!!");      
+      _justice.transfer(Receipts[_receiptId].totalCost);
+    }
     
     
 }
