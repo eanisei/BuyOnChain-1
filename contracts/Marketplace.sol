@@ -106,9 +106,9 @@ contract Marketplace is NFT, Stakable{
    
    function itemDelivered(uint _receiptId) public onlyBuyer(_receiptId) {
        Receipts[_receiptId].seller.transfer(Receipts[_receiptId].totalCost);
-       bytes memory description= abi.encodePacked(block.timestamp, _receiptId, block.difficulty, Receipts[_receiptId].productId, Receipts[_receiptId].quantity, Receipts[_receiptId].totalCost, Receipts[_receiptId].buyer, Receipts[_receiptId].seller, Receipts.length);
-       mintNFT(msg.sender, description);
-       mintNFT(Receipts[_receiptId].seller, description);
+       bytes memory packedDescription= abi.encodePacked(block.timestamp, _receiptId, block.difficulty, Receipts[_receiptId].productId, Receipts[_receiptId].quantity, Receipts[_receiptId].totalCost, Receipts[_receiptId].buyer, Receipts[_receiptId].seller, Receipts.length);
+       mintNFT(msg.sender, packedDescription);
+       mintNFT(Receipts[_receiptId].seller, packedDescription);
    }
    
   function dispute(uint _receiptId) external payable {
