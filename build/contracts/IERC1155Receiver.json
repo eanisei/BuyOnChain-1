@@ -116,7 +116,7 @@
         1347
       ],
       "IERC165": [
-        2440
+        1791
       ]
     },
     "id": 1348,
@@ -140,7 +140,7 @@
         "id": 1309,
         "nodeType": "ImportDirective",
         "scope": 1348,
-        "sourceUnit": 2441,
+        "sourceUnit": 1792,
         "src": "58:47:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -153,7 +153,7 @@
               "id": 1311,
               "name": "IERC165",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 2440,
+              "referencedDeclaration": 1791,
               "src": "177:7:3"
             },
             "id": 1312,
@@ -162,7 +162,7 @@
           }
         ],
         "contractDependencies": [
-          2440
+          1791
         ],
         "contractKind": "interface",
         "documentation": {
@@ -175,7 +175,7 @@
         "id": 1347,
         "linearizedBaseContracts": [
           1347,
-          2440
+          1791
         ],
         "name": "IERC1155Receiver",
         "nodeType": "ContractDefinition",
@@ -596,7 +596,7 @@
         1347
       ],
       "IERC165": [
-        2440
+        1791
       ]
     },
     "id": 1348,
@@ -620,7 +620,7 @@
         "id": 1309,
         "nodeType": "ImportDirective",
         "scope": 1348,
-        "sourceUnit": 2441,
+        "sourceUnit": 1792,
         "src": "58:47:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -633,7 +633,7 @@
               "id": 1311,
               "name": "IERC165",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 2440,
+              "referencedDeclaration": 1791,
               "src": "177:7:3"
             },
             "id": 1312,
@@ -642,7 +642,7 @@
           }
         ],
         "contractDependencies": [
-          2440
+          1791
         ],
         "contractKind": "interface",
         "documentation": {
@@ -655,7 +655,7 @@
         "id": 1347,
         "linearizedBaseContracts": [
           1347,
-          2440
+          1791
         ],
         "name": "IERC1155Receiver",
         "nodeType": "ContractDefinition",
@@ -1074,8 +1074,8 @@
     "version": "0.8.1+commit.df193b15.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.4.1",
-  "updatedAt": "2021-09-27T14:56:57.604Z",
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2021-10-04T19:11:35.594Z",
   "devdoc": {
     "details": "_Available since v3.1._",
     "kind": "dev",

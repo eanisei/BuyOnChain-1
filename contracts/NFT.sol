@@ -3,9 +3,9 @@ pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
+//import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract NFT is ERC1155, Ownable{
+contract NFT is ERC1155{
     uint public constant buyerReceipt = 0;
     uint public constant sellerReceipt = 1;
 

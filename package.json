@@ -1,7 +1,7 @@
 {
   "name": "b",
   "version": "1.0.0",
-  "description": "",
+  "description": "<img src=\"logo/Buy.gif\" width=\"100\">",
   "main": "truffle-config.js",
   "directories": {
     "test": "test"
@@ -12,6 +12,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@openzeppelin/contracts": "^4.3.2"
-  }
+    "@openzeppelin/contracts": "^4.3.2",
+    "@truffle/hdwallet-provider": "^1.5.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/champ5898/B.git"
+  },
+  "bugs": {
+    "url": "https://github.com/champ5898/B/issues"
+  },
+  "homepage": "https://github.com/champ5898/B#readme"
 }

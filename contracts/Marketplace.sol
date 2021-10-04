@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
-import "contracts/NFT.sol";
-import "contracts/Stakable.sol";
+import "./NFT.sol";
+import "./Stakable.sol";
 
 contract Marketplace is NFT, Stakable{
    
@@ -65,7 +65,7 @@ contract Marketplace is NFT, Stakable{
        require(Receipts[_receiptId].seller==msg.sender, "You are not the seller of this product!!");
        _;
    }
-   modifier onlyOwner() override{
+   modifier onlyOwner(){
        require (msg.sender == Owner, "You are not the owner");
        _;
    }
