@@ -1,5 +1,5 @@
 {
-  "name": "b",
+  "name": "boc",
   "version": "1.0.0",
   "description": "<img src=\"logo/Buy.gif\" width=\"100\">",
   "main": "truffle-config.js",
@@ -18,10 +18,10 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/champ5898/B.git"
+    "url": "git+https://github.com/champ5898/BuyOnChain.git"
   },
   "bugs": {
-    "url": "https://github.com/champ5898/B/issues"
+    "url": "https://github.com/champ5898/BuyOnChain/issues"
   },
-  "homepage": "https://github.com/champ5898/B#readme"
+  "homepage": "https://github.com/champ5898/BuyOnChain#readme"
 }
