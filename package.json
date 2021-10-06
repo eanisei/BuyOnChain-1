@@ -13,9 +13,9 @@
   "license": "ISC",
   "dependencies": {
     "@openzeppelin/contracts": "^4.3.2",
-    "@truffle/hdwallet-provider": "^1.5.0"
+    "@truffle/hdwallet-provider": "^1.5.0",
+    "web3": "^1.6.0"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/champ5898/BuyOnChain.git"

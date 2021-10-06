@@ -1,0 +1,130 @@
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+
+Starting migrations...
+======================
+> Network name:    'rinkeby'
+> Network id:      4
+> Block gas limit: 29970705 (0x1c95111)
+
+
+1_initial_migration.js
+======================
+
+   Replacing 'Migrations'
+   ----------------------
+   > transaction hash:    0x8c7f84b46de1785f3d76d46925d31185cd871d989f81a6a24418d03010ca7954
+   > Blocks: 1            Seconds: 13
+   > contract address:    0xDeaA225f96817cF0134E8B2B6504f6c92bc4f09A
+   > block number:        9416008
+   > block timestamp:     1633498014
+   > account:             0xbe0F2aCF9E348299a39038fA459A40446781a718
+   > balance:             4.999751807997021696
+   > gas used:            248192 (0x3c980)
+   > gas price:           1.000000012 gwei
+   > value sent:          0 ETH
+   > total cost:          0.000248192002978304 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   > confirmation number: 1 (block: 9416009)
+   > confirmation number: 2 (block: 9416010)
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.000248192002978304 ETH
+
+
+2_initial_migration.js
+======================
+
+   Replacing 'Marketplace'
+   -----------------------
+   > transaction hash:    0xd9d53881afa18c51fd4b684ef8017c4805f04a634edfe264e467910a693d89e2
+   > Blocks: 3            Seconds: 37
+   > contract address:    0xcdEc06999de5EEF40DA3542D8ccc29062bbe037b
+   > block number:        9416014
+   > block timestamp:     1633498104
+   > account:             0xbe0F2aCF9E348299a39038fA459A40446781a718
+   > balance:             4.99460709194042982
+   > gas used:            5098803 (0x4dcd33)
+   > gas price:           1.000000011 gwei
+   > value sent:          0 ETH
+   > total cost:          0.005098803056086833 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   > confirmation number: 1 (block: 9416015)
+   > confirmation number: 2 (block: 9416016)
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.005098803056086833 ETH
+
+
+3_deploy_contracts.js
+=====================
+
+   Deploying 'NFT'
+   ---------------
+   > transaction hash:    0xe90c0138909e0c42206560b712f4493945fd3ef2242a845b045cdd7d06fc1421
+   > Blocks: 2            Seconds: 25
+   > contract address:    0x08862Db5F7c147a34C9841f241b520A79b23056f
+   > block number:        9416019
+   > block timestamp:     1633498179
+   > account:             0xbe0F2aCF9E348299a39038fA459A40446781a718
+   > balance:             4.991962992916604116
+   > gas used:            2615286 (0x27e7f6)
+   > gas price:           1.000000009 gwei
+   > value sent:          0 ETH
+   > total cost:          0.002615286023537574 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   > confirmation number: 1 (block: 9416020)
+   > confirmation number: 2 (block: 9416021)
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.002615286023537574 ETH
+
+
+4_deploy_contracts.js
+=====================
+
+   Deploying 'Stakable'
+   --------------------
+   > transaction hash:    0x43f5fe45fe7137575b2700c99fc508a142a458aeca16a5a745f03162fd46b90b
+   > Blocks: 2            Seconds: 21
+   > contract address:    0xeF37E296d3f58E35ED0c1B6959AF29fB2990F568
+   > block number:        9416024
+   > block timestamp:     1633498254
+   > account:             0xbe0F2aCF9E348299a39038fA459A40446781a718
+   > balance:             4.9914817689122731
+   > gas used:            452411 (0x6e73b)
+   > gas price:           1.000000009 gwei
+   > value sent:          0 ETH
+   > total cost:          0.000452411004071699 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   > confirmation number: 1 (block: 9416025)
+   > confirmation number: 2 (block: 9416026)
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.000452411004071699 ETH
+
+
+Summary
+=======
+> Total deployments:   4
+> Final cost:          0.00841469208667441 ETH
+
