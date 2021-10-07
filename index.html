@@ -3,192 +3,242 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BuyOnChain</title>
-    <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+Display">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
-    rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+    <link rel="stylesheet" href="main.css">
     <script type="text/javascript" src="abi.js"></script>
-
     
+    
+    <title>BuyOnChain</title>
+
 </head>
+
 <body>
-
     <header>
-
         <nav role="navigation">
             <div id="menuToggle">
-              <!--
-              A fake / hidden checkbox is used as click reciever,
-              so you can use the :checked selector on it.
-              -->
-              <input type="checkbox" />
-              
-              <!--
-              Some spans to act as a hamburger.
-              
-              They are acting like a real hamburger,
-              not that McDonalds stuff.
-              -->
-              <span></span>
-              <span></span>
-              <span></span>
+                <input type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul id="menu">
 
-              <!--
-              Too bad the menu has to be inside of the button
-              but hey, it's pure CSS magic.
-              -->
-              <ul id="menu">
+                    <div class="main-btn">
+                        <button id="btnHome">
+                            Home
+                        </button>
+                        <button id="btnConnect"><span class="material-icons-outlined">account_balance_wallet</span>
+                            Connect wallet
+                        </button>
+                        <button id="btnUserInfo">
+                            <span class="material-icons-outlined">person</span>
+                            Profile
+                        </button>
 
-          <div class="main-btn">
-            <button id="btnConnect"><span class="material-icons-outlined">account_balance_wallet</span>
-                Connect wallet
-            </button>
-            <button id="btnUserInfo">
-                <span class="material-icons-outlined">person</span>
-                Profile
-            </button>
-
-            <button id="btnAboutUs">
-                About us
-            </button>
-            <button id="btnSocial">
-                Social
-            </button>
-            <button id="btnDocs">
-                Docs
-            </button>
-            <button id="btnWhitepaper">
-                Whitepaper
-            </button>
-            <button id="btnStakeForm">
-                Stake
-            </button>
-        </div> 
-        
-
-
-        <div id="userInfo">
-            <h4>User Profile</h4>
-            <input type="text"id = "txtUsername" required placeholder="Enter username">
-            <input type="text"id = "txtEmail" required placeholder="Enter email">
-            <input type="text"id = "txtAddress" placeholder="Enter address">
-            <img width="50" height="50" src="" id="imgAvatar" alt="">
-            <label for="fileAvatar">Select Avatar</label>
-            <input type="file" id="fileAvatar">
-    
-            <button id="btnLogout">Log out</button>
-            <button id="btnCloseUserInfo">Close</button>
-            <button id="btnSaveUserInfo">Save</button>
-        </div>
-
-        <div id="userStakeForm">
-            <h4>Staking</h4>
-            <input type="number" min="0.05" step="0.01" id = "numStakeAmount" placeholder="Enter Amount" required> 
-             
-            <button id="btnCloseStakeForm">Close</button>
-            <button id="btnStakeConfirm">Stake</button>
-        </div>
-        
-       
-
-  
-              </ul>
+                        <button id="btnAboutUs">
+                            About us
+                        </button>
+                        <button id="btnSocial">
+                            Social
+                        </button>
+                        <button id="btnDocs">
+                            Docs
+                        </button>
+                        <button id="btnWhitepaper" onClick="parent.open('https://blog.buyonchain.live')";>
+                            Open Whitepaper
+                        </button>
+                        <button id="btnStakeForm">
+                            Stake
+                        </button>
+                    </div> 
+                </ul>
             </div>
-          </nav>
-
-    
-          <div class="title">
+        </nav>
+   
+        <div class="title">
             <h1>Buy On Chain</h1>
         </div>
 
-        
-
         <div class="logo">
-            <a href="index.html"><img src="logo/on.png"></a>
+            <a href="index.html"><img src="../logo/on.png"></a>
         </div>
-
     </header>
+
     <section class="main">
-
-
-        <div class="marketplace">
-            <h2>First <br>decentralized<br> marketplace</h2>
-
-        <img src="../logo/buc.svg" alt="logo">
-
-        </div>
-
-        
-        
-        <button class="btn" id="btnOpenListItem">
-            <span class="material-icons-outlined">add_circle_outline</span>
-        </button>
-
-        <div id="listItemForm">
-            <h4>List Item</h4>
-            <form action="">
-            <div class="list-form">
-            <input type="text" id = "txtListItemName" required placeholder="Enter name">
-            <input type="number" min="1" step="1" id = "numListItemPrice" placeholder="Enter Price" required> 
-            <input type="number" min="1" step="1" id = "numListItemQuantity" placeholder="Enter Quantity" required>
-            <textarea id="txtListItemDescription" cols="30" rows="5" placeholder="Enter Description"></textarea>
-            
-                <div class="item_data">
-    
-                    <div id="item_status">
-            <!-- <label for="selectListItemStatus">Status</label> -->
-            <select id="selectListItemStatus">
-                <option value="0">Available</option>
-                <option value="1">Out of Stock</option>
-            </select>
-
-            <label for="selectListItemType">Type</label>
-            <select id="selectListItemType">
-            <option value="0">Returnable and Replaceable</option>
-            <option value="1">Replaceable but not Returnable</option>
-            <option value="2">Non Replaceable and Non Returnable</option>
-            
-            </select>
-        </div>
-    
-            <label for="fileListItem">
-                <span class="material-icons-outlined">file_upload</span>
-            </label>
-            <input type="file" id="fileListItem">
-        </div>
+        <div id="home">
+                <div class="home_title">
+                <h2>First decentralized marketplace</h2>
+                </div>
+                <div class="bg_image">
+                <img src="../logo/buc.svg" alt="logo">
             </div>
+
+        </div>
+                            <button class="btn" id="btnAddProduct"><span class="material-icons-outlined">add_circle_outline</span>
+                Add product</button>
+
+                <div id="addProductForm" class="modal fade" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title">Add new NFT product</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                        <div class="form-group">
+                            <!-- <label for="selectAddProductCategory">Select category</label> -->
+                            <select id="selectAddProductCategory"></select>
+                        </div>
+                                    <div class="form-group">
+                          <!-- <label for="txtAddProductName">Item title</label> -->
+                          <input type="text" id="txtAddProductName" class="form-control" required placeholder="Item title">
+                      </div>
+                      <div class="form-group">
+                          <!-- <label for="txtAddProductDescription">Description</label> -->
+                          <textarea id="txtAddProductDescription" cols="30" rows="5" class="form-control" placeholder="Description"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="numAddProductPrice">Price (ETH)</label>
+                        <input type="number" min="1" step="1" id="numAddProductPrice" class="form-control" required placeholder="Enter Price (ETH)">
+                      </div>
+                      <!-- img width="50" height="50" src="" id="imgProductFile" alt="" -->
+                      <div class="form-group">
+
+                      <label for="fileListItem">
+                        <input type="file" id="fileListItem">
+                        Attach images
+                        <span class="material-icons-outlined">file_upload</span>
+                    </label>
+                    </div>
+                  </div>
+
+                  <div class="modal-footer">
+                      <button id="btnSaveAddProduct" type="button" class="btn btn-primary">Save product</button>
+                      <button id="btnCloseAddProduct" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            </div>
+        </div>
+
+
+        <div id="userStakeForm" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title">Staking</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+
+                <div class="form-group">
+                    <select id="selectAddProductCategory"></select>
+                </div>
+           
+          </div>
+          
+          <div class="modal-footer">
+              <button id="btnStakeConfirm" type="button" class="btn btn-primary">Stake</button>
+              <button id="btnCloseStakeForm" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<!-- 
+        <div id="aboutus">
+            <div class="marketplace">
+                <h2>About us</h2>
+                About us content here..
+            </div>
+        </div>
+
+        <div id="social">
+            <div class="marketplace">
+                <h2>Social</h2>
+                Social content here..
+            </div>
+        </div>
+
+        <div id="docs">
+            <div class="marketplace">
+                <h2>Docs</h2>
+                Docs content here..
+            </div>
+        </div> -->
+
      
+    </section>
 
-            </form>
+    <div class="hidden">
+        <div id="userInfo" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">User Profile</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="txtUsername">Username</label>
+                        <input type="text" class="form-control" id="txtUsername" required placeholder="Enter username">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtEmail">Email address</label>
+                        <input type="email" class="form-control" id="txtEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtAddress">Address</label>
+                        <input type="text" class="form-control" id="txtAddress" placeholder="Enter address">
+                    </div>
 
-            <div class="list_btns">
-
-            <button class="btn" id="btnCloseListItem">
-                <span class="material-icons-outlined">
-                cancel
-                </span>
-            </button>
-
-            <button class="btn" id="btnListItem">
-                <span class="material-icons-outlined">
-                add_circle_outline
-                </span>
-            </button>  
-            
+                    <img width="50" height="50" src="" id="imgAvatar" alt="">
+                    <div class="form-group">
+                        <label for="fileAvatar">Select Avatar</label>
+                        <input type="file" class="form-control-file" id="fileAvatar">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="btnLogout">Log out</button>
+                    <button id="btnSaveUserInfo" type="button" class="btn btn-primary">Save changes</button>
+                    <button id="btnCloseUserInfo" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
         </div>
+    
+    </div>
+
+
+    <section class="scroll-two">
+    </section>
+
+    <footer>
+        <div class="social">
+            <div class="twitter"><a href="https://twitter.com"><img src="../icons/twitter.svg" alt="twitter"></a></div>
+            <div class="facebook"><a href="https://facebook.com"><img src="../icons/facebook.svg" alt="facebook"></a></div>
+            <div class="discord"><a href="https://discord.com"><img src="../icons/discord.svg" alt="discord"></a></div>
+            <div class="github"><a href="https://github.com"><img src="../icons/github.svg" alt="github"></a></div>
         </div>
+    </footer>
 
-</section>
-
-<section class="scroll-two">
-</section>
-
-
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
     <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+    <script src="imageresize.js"></script>
     <script src="main.js"></script>
-
 </body>
 </html>
