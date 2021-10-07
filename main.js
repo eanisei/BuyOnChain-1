@@ -4,6 +4,19 @@ const MORALIS_SERVER_URL = "https://uvoj28qnh9dj.moralishost.com:2053/server";
 Moralis.initialize(MORALIS_APPLICATION_ID);
 Moralis.serverURL = MORALIS_SERVER_URL;
 
+
+$('.slider-nav').slick({
+  slidesToShow: 12,
+  slidesToScroll: 1,
+  dots: false,
+  focusOnSelect: true
+});
+// $('a[data-slide]').click(function(e) {
+//   e.preventDefault();
+//   var slideno = $(this).data('slide');
+//   $('.slider-nav').slick('slickGoTo', slideno - 1);
+// });
+
 const productCategories = {
     "elec": "Electronics",
     "comp": "Computers",
